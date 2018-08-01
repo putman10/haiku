@@ -19,21 +19,27 @@ export class Haiku {
 
     line1Words.forEach(function(word){
      let letter = word.split("");
-     if(letter.lastIndexOf(e) == (letter.length - 1)){
-       letter.pop();
+     if(letter.lastIndexOf(e) == (letter.length - 1) && (!word.includes('a')) && (!word.includes('i')) && (!word.includes('o')) && (!word.includes('u'))){
        newline1.push(letter.join(""))
+      }
+      else if (letter.lastIndexOf(e) == (letter.length - 1) && ((word.includes('a')) || (word.includes('i')) || (word.includes('o')) || (word.includes('u')))){
+        letter.pop();
+      newline1.push(letter.join(""))
       }
       else {
         newline1.push(letter.join(""))
       }
     });
 
-
     line2Words.forEach(function(word){
      let letter = word.split("");
-     if(letter.lastIndexOf(e) == (letter.length - 1)){
-       letter.pop();
+
+     if(letter.lastIndexOf(e) == (letter.length - 1) && (!word.includes('a')) && (!word.includes('i')) && (!word.includes('o')) && (!word.includes('u'))){
        newline2.push(letter.join(""))
+      }
+      else if (letter.lastIndexOf(e) == (letter.length - 1) && ((word.includes('a')) || (word.includes('i')) || (word.includes('o')) || (word.includes('u')))){
+        letter.pop();
+      newline2.push(letter.join(""))
       }
       else {
         newline2.push(letter.join(""))
@@ -42,9 +48,12 @@ export class Haiku {
 
     line3Words.forEach(function(word){
      let letter = word.split("");
-     if(letter.lastIndexOf(e) == (letter.length - 1)){
-       letter.pop();
+     if(letter.lastIndexOf(e) == (letter.length - 1) && (!word.includes('a')) && (!word.includes('i')) && (!word.includes('o')) && (!word.includes('u'))){
        newline3.push(letter.join(""))
+      }
+      else if (letter.lastIndexOf(e) == (letter.length - 1) && ((word.includes('a')) || (word.includes('i')) || (word.includes('o')) || (word.includes('u')))){
+        letter.pop();
+      newline3.push(letter.join(""))
       }
       else {
         newline3.push(letter.join(""))
@@ -155,9 +164,8 @@ export class Haiku {
         }
       });
     });
-
-    this.line3Counter += line2Counter;
     debugger;
+    this.line3Counter += line3Counter;
     if(this.line1Counter == 5 && this.line2Counter == 7 && this.line3Counter == 5){
       return true;
     } else {
