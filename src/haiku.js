@@ -265,7 +265,6 @@ export class Haiku {
     });
 
     this.line3Counter += line3Counter;
-    debugger;
     if(this.line1Counter == 5 && this.line2Counter == 7 && this.line3Counter == 5){
       return true;
     } else {
