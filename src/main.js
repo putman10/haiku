@@ -6,11 +6,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 $(document).ready(function() {
-  var string1 = "An old silent poond";
+  var string1 = "An old silent pond";
   var string2 = "A frog jumps into the pond";
   var string3 = "splash! Silence again.";
   var reusableHaiku = new Haiku(string1, string2, string3);
-  reusableHaiku.removeSilentLetter();
-  reusableHaiku.removeOneVowelFromDipthongs();
-  reusableHaiku.countVowels();
+  reusableHaiku.testHaiku()
 });

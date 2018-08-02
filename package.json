@@ -8,10 +8,11 @@
     "start": "npm run build; webpack-dev-server --open --mode development",
     "watch": "webpack --watch",
     "lint": "eslint src/*.js",
-    "test": "karma start karma.conf.js"
+    "test": "karma start karma.conf.js",
+    "lintfix": "eslint --fix src/*.js"
   },
   "repository": {
-  "type": "git"
+    "type": "git"
   },
   "keywords": [],
   "author": "",
