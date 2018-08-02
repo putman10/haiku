@@ -9,11 +9,45 @@ export class Haiku {
   }
   testHaiku(){
     this.removeSilentLetter();
+    this.addOneForYAtEnd();
     this.removeOneVowelFromDipthongs();
     this.removeOneVowelFromTwoVowelsInARow();
-    this.countVowels();
+    return this.countVowels();
   }
 
+  addOneForYAtEnd() {
+    const y = "y";
+    let line1Words = this.line1.split(" ");
+    let line2Words = this.line2.split(" ");
+    let line3Words = this.line3.split(" ");
+    let line1Counter = 0;
+    let line2Counter = 0;
+    let line3Counter = 0;
+
+    line1Words.forEach(function(word){
+      if (word.includes(y)) {
+      // if(word.charAt(word.length - 1) == y){
+        line1Counter ++;
+      }
+    });
+    this.line1Counter += line1Counter;
+
+    line2Words.forEach(function(word){
+    if (word.includes(y)) {
+      // if(word.charAt(word.length - 1) == y){
+        line2Counter ++;
+      }
+    });
+    this.line2Counter += line2Counter;
+
+    line3Words.forEach(function(word){
+    if (word.includes(y)) {
+      // if(word.charAt(word.length - 1) == y){
+        line3Counter ++;
+      }
+    });
+    this.line3Counter += line3Counter;
+  }
 
   removeSilentLetter() {
     const e = "e";
@@ -131,7 +165,7 @@ export class Haiku {
   }
 
   removeOneVowelFromDipthongs() {
-    const dipthongs = [ "oy", "ow", "aw"];
+    const dipthongs = [ "oy", "aw", "ey", "ay"];
     let line1Words = this.line1.split(" ");
     let line2Words = this.line2.split(" ");
     let line3Words = this.line3.split(" ");
@@ -229,8 +263,9 @@ export class Haiku {
         }
       });
     });
-debugger;
+
     this.line3Counter += line3Counter;
+    debugger;
     if(this.line1Counter == 5 && this.line2Counter == 7 && this.line3Counter == 5){
       return true;
     } else {
